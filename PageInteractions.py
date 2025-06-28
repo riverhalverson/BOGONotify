@@ -4,52 +4,73 @@ from selenium.webdriver.common.by import By
 import undetected_chromedriver as uc
 import time
 
-
-
-
-
+from undetected_chromedriver import ChromeOptions
 
 
 class Page:
+    #bogoItems = []
 
-    def expandPage(self):
+    def getBogoItems(self):
         driver = Page.setupDriver(self)
-        time.sleep(5)
+        time.sleep(1)
 
-        pageEndFound = False
+        # find element that states how many results are in BOGO deals
+        resultElement = driver.find_element(By.XPATH,"/html/body/div[1]/section/div[4]/div[1]/div[3]/div/div[2]/div[1]/div/span[1]")
 
-        while not pageEndFound:
+        # Get text of that element
+        resultNum = resultElement.text
 
-            #find "Load more" button on the page
-            try:
-                loadMore = driver.find_element(By.XPATH, '//*[@id="main"]/div[4]/div/div[3]/div[2]/div[4]')
-                text = loadMore.get_dom_attribute("text")
-                print(text)
+        # Get just number from that text
+        resultNum = resultNum.split()
+        num = resultNum[0]
 
-                try:
-                    loadMore.click()
-                    time.sleep(2)
+        bogoItems = []
+        index = 0
 
-                except WebDriverException:
-                    pageEndFound = True
+        #// *[ @ id = "bogo-10"]
 
-            except NoSuchElementException:
-                pageEndFound = True
+        for index in range(int(num)):
+            id = "bogo-" + str(index)
 
+            xPath = "//*[@id=" + '"' + id + '"' + "]/div/div[2]/div[1]/div/button/span"
+            #xPath = "// *[ @ id = " + '"' + id + '"' + "]"
 
+            # Find next item
+            currItem = driver.find_element(By.XPATH, xPath)
 
-        #release driver
+            # Scroll page to keep items loading
+            driver.execute_script("arguments[0].scrollIntoView(true);", currItem)
+
+            # Get text from element (Product name)
+            text = currItem.text
+            #print("Found item: " + text)
+
+            # Add item to list
+            bogoItems.append(text)
+
+            #time.sleep(.05)
+
+        return bogoItems
+
+        # release driver
         driver.quit()
 
     def setupDriver(self):
+        options = ChromeOptions()
+
 
         # Start webdriver
-        driver = uc.Chrome()
+        driver = uc.Chrome(options=options)
+
+        #driver.set_window_size(500,500)
 
         # Open web page
         driver.get("https://www.publix.com/savings/weekly-ad/bogo?merch=hp_viz_nav_bogo")
 
         return driver
+
+    def getItems(self):
+        return Page.bogoItems
 
 
 

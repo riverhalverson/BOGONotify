@@ -5,15 +5,15 @@ import sys
 
 
 def main():
-    requestedItems = "Cereal"
+    requestedItems = ("Post Great Grains Cereal")
 
     page = Page()
 
     bogoItems = page.getBogoItems()
 
-    for item in bogoItems:
-        if requestedItems[0] in item:
-            print(item)
+    #for item in bogoItems:
+    #    if requestedItems == item:
+    #        print(item)
 
 
 

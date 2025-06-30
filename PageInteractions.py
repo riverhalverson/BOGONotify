@@ -1,6 +1,11 @@
 from selenium.common import NoSuchElementException
 from selenium.common import WebDriverException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.service import service
+from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
 import undetected_chromedriver as uc
 import time
 
@@ -12,62 +17,80 @@ class Page:
 
     def getBogoItems(self):
         driver = Page.setupDriver(self)
-        time.sleep(1)
+        time.sleep(10)
+        driver.quit()
+        #wait = WebDriverWait(driver, 10)
 
-        # find element that states how many results are in BOGO deals
-        resultElement = driver.find_element(By.XPATH,"/html/body/div[1]/section/div[4]/div[1]/div[3]/div/div[2]/div[1]/div/span[1]")
 
-        # Get text of that element
-        resultNum = resultElement.text
 
-        # Get just number from that text
-        resultNum = resultNum.split()
-        num = resultNum[0]
+        #wait.until(EC.text_to_be_present_in_element((By.XPATH, "//span[@role='alert']"), "product results"))
+        #totalResults = driver.find_element(By.XPATH, "//span[@role='alert']")
+        #print(totalResults.text)
+
+        #totalResults = driver.find_element(By.CLASS_NAME, "fullWidth productCardHeaderControls")
+        #totalResults.text()
+        #print(totalResults)
+
 
         bogoItems = []
         index = 0
 
-        #// *[ @ id = "bogo-10"]
+        '''
+        for index in range(47):
+            # Create indexed id for all elements on current page
+            id = "[data-id=" + "'" + str(index) + "'" + "]"
 
-        for index in range(int(num)):
-            id = "bogo-" + str(index)
-
-            xPath = "//*[@id=" + '"' + id + '"' + "]/div/div[2]/div[1]/div/button/span"
-            #xPath = "// *[ @ id = " + '"' + id + '"' + "]"
 
             # Find next item
-            currItem = driver.find_element(By.XPATH, xPath)
+            currItem = driver.find_element(By.CSS_SELECTOR, id)
 
             # Scroll page to keep items loading
             driver.execute_script("arguments[0].scrollIntoView(true);", currItem)
 
             # Get text from element (Product name)
-            text = currItem.text
+            #text = currItem.text
             #print("Found item: " + text)
 
             # Add item to list
-            bogoItems.append(text)
+            #bogoItems.append(text)
 
             #time.sleep(.05)
 
         return bogoItems
+        '''
 
         # release driver
         driver.quit()
 
     def setupDriver(self):
-        options = ChromeOptions()
-
+        options = uc.ChromeOptions()
+        prefs = {"profile.default_content_setting_values.geolocation": 1}
+        options.add_experimental_option("prefs", prefs)
 
         # Start webdriver
         driver = uc.Chrome(options=options)
 
-        #driver.set_window_size(500,500)
-
         # Open web page
-        driver.get("https://www.publix.com/savings/weekly-ad/bogo?merch=hp_viz_nav_bogo")
+        driver.get("https://www.publix.com/d/all-categories")
+
+        #options = Options()
+        #options.add_argument("--disable-blink-features=AutomationControlled")
+        #options.add_argument(
+            #"user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36")
+        #options.add_argument("--incognito")
+
+        #prefs = {"profile.default_content_setting_values.geolocation": 1}
+        #options.add_experimental_option("prefs", prefs)
+
+        #driver = webdriver.Chrome(options=options)
+        #driver.get("https://www.publix.com/d/all-categories")
 
         return driver
+
+
+
+
+
 
     def getItems(self):
         return Page.bogoItems

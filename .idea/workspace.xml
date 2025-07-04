@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="470e4f58-7158-4b7c-98ae-030f73eeb2e2" name="Changes" comment="Initial commit">
+    <list default="true" id="470e4f58-7158-4b7c-98ae-030f73eeb2e2" name="Changes" comment="Got the main items parsed and into and array, ready to start looking for requested">
       <change beforePath="$PROJECT_DIR$/.idea/BOGONotify.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BOGONotify.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/PageInteractions.py" beforeDir="false" afterPath="$PROJECT_DIR$/PageInteractions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +33,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/riverhalverson/BOGONotify&quot;,
-    &quot;accountId&quot;: &quot;88e967c8-6ed4-47e2-9e66-6e2009edb896&quot;
+    &quot;url&quot;: &quot;https://github.com/riverhalverson/BOGONotify.git&quot;,
+    &quot;accountId&quot;: &quot;9f711d98-63a6-45aa-aa1d-a7488ccc2798&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -47,18 +46,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Main.executor": "Run",
-    "Python.PageInteractions.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/river/Downloads/one-dark-theme/lib/one-dark-theme.jar",
-    "settings.editor.selected.configurable": "editor.preferences.smartKeys"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.PageInteractions.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/river/PycharmProjects/BOGONotify&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />

@@ -1,99 +1,59 @@
-from selenium.common import NoSuchElementException
-from selenium.common import WebDriverException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.chrome.service import service
-from selenium.webdriver.chrome.options import Options
-from selenium import webdriver
-from selenium.webdriver.support import expected_conditions as EC
-import undetected_chromedriver as uc
+from playwright.sync_api import sync_playwright
 import time
 
-from undetected_chromedriver import ChromeOptions
 
 
 class Page:
     #bogoItems = []
 
     def getBogoItems(self):
-        driver = Page.setupDriver(self)
-        time.sleep(10)
-        driver.quit()
-        #wait = WebDriverWait(driver, 10)
+        with sync_playwright() as p:
+
+            # Open up a new browser session in headless mode and slow it down to let it load properly
+            browser = p.chromium.launch(headless=False,
+                                        slow_mo=30)
+
+            # Give browser geolocation for store locater function
+            # This gets a warning for incorrect type in PyCharm, the following ignores it
+            # noinspection PyTypeChecker
+            context = browser.new_context(geolocation={"latitude": 28.3164, "longitude": -80.7270},
+                                          permissions=["geolocation"],
+                                          locale="en-US")
+
+            # Opens up a new page with the geolocation parameters
+            page = context.new_page()
+            page.goto("https://www.publix.com/d/all-categories?facet=facetBOGO%3A%3Atrue")
+
+            # Page seems to have an issue loading elements without a refresh after adding the location settings
+            time.sleep(.4)
+            page.reload()
+
+            # Get total results we will be getting
+            results = str(page.get_by_text("product results").all_inner_texts())
+            resultsSplit = results.split(" ")
+            resultsNum = resultsSplit[0][2:]
+            print(resultsNum, "BOGO results found")
+
+            # Wait for the product grid to load
+            #page.wait_for_selector("ul[data-testid='product-grid']")
+
+            # Select all product items in the grid
+            time.sleep(2)
+            items = page.locator(".p-grid-item").nth(0)
+            items.scroll_into_view_if_needed()
+            text = items.all_text_contents()
+            print(text)
+            text = items.all()
+            print(text)
+            print(" ")
 
 
 
-        #wait.until(EC.text_to_be_present_in_element((By.XPATH, "//span[@role='alert']"), "product results"))
-        #totalResults = driver.find_element(By.XPATH, "//span[@role='alert']")
-        #print(totalResults.text)
+            time.sleep(10)
+            browser.close()
 
-        #totalResults = driver.find_element(By.CLASS_NAME, "fullWidth productCardHeaderControls")
-        #totalResults.text()
-        #print(totalResults)
-
-
-        bogoItems = []
-        index = 0
-
-        '''
-        for index in range(47):
-            # Create indexed id for all elements on current page
-            id = "[data-id=" + "'" + str(index) + "'" + "]"
-
-
-            # Find next item
-            currItem = driver.find_element(By.CSS_SELECTOR, id)
-
-            # Scroll page to keep items loading
-            driver.execute_script("arguments[0].scrollIntoView(true);", currItem)
-
-            # Get text from element (Product name)
-            #text = currItem.text
-            #print("Found item: " + text)
-
-            # Add item to list
-            #bogoItems.append(text)
-
-            #time.sleep(.05)
-
-        return bogoItems
-        '''
-
-        # release driver
-        driver.quit()
-
-    def setupDriver(self):
-        options = uc.ChromeOptions()
-        prefs = {"profile.default_content_setting_values.geolocation": 1}
-        options.add_experimental_option("prefs", prefs)
-
-        # Start webdriver
-        driver = uc.Chrome(options=options)
-
-        # Open web page
-        driver.get("https://www.publix.com/d/all-categories")
-
-        #options = Options()
-        #options.add_argument("--disable-blink-features=AutomationControlled")
-        #options.add_argument(
-            #"user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36")
-        #options.add_argument("--incognito")
-
-        #prefs = {"profile.default_content_setting_values.geolocation": 1}
-        #options.add_experimental_option("prefs", prefs)
-
-        #driver = webdriver.Chrome(options=options)
-        #driver.get("https://www.publix.com/d/all-categories")
-
-        return driver
+#    def setupDriver(self):
 
 
 
-
-
-
-    def getItems(self):
-        return Page.bogoItems
-
-
-
+#    def getItems(self):

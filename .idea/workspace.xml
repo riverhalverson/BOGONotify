@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="470e4f58-7158-4b7c-98ae-030f73eeb2e2" name="Changes" comment="Got the main items parsed and into and array, ready to start looking for requested">
-      <change beforePath="$PROJECT_DIR$/.idea/BOGONotify.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BOGONotify.iml" afterDir="false" />
+    <list default="true" id="470e4f58-7158-4b7c-98ae-030f73eeb2e2" name="Changes" comment="Changed from selenium to Playwright, much more streamlined. Got webpage loading with geolocation working well">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PageInteractions.py" beforeDir="false" afterPath="$PROJECT_DIR$/PageInteractions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +84,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750633462245</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changed from selenium to Playwright, much more streamlined. Got webpage loading with geolocation working well">
+      <option name="closed" value="true" />
+      <created>1751638099896</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1751638099896</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -102,6 +108,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Changed from selenium to Playwright, much more streamlined. Got webpage loading with geolocation working well" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed from selenium to Playwright, much more streamlined. Got webpage loading with geolocation working well" />
   </component>
 </project>

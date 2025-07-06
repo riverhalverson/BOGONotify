@@ -37,16 +37,25 @@ class Page:
             # Wait for the product grid to load
             #page.wait_for_selector("ul[data-testid='product-grid']")
 
+            xpath = "//*[@id=" + '"' + "main" + '"' + "]/div[1]/div[2]/div/div[2]/div[1]/div[2]/div[2]/div/div/div[1]/div/div[2]/div[1]/div/a"
+
+
             # Select all product items in the grid
             time.sleep(2)
-            items = page.locator(".p-grid-item").nth(0)
+            items = page.locator(xpath)
             items.scroll_into_view_if_needed()
             text = items.all_text_contents()
             print(text)
             text = items.all()
             print(text)
             print(" ")
+            '''
+            / html / body / div[1] / section / div[1] / div[2] / div / div[2] / div[1] / div[2] / div[2] / div / div / \
+              div[1] / div / div[2] / div[1] / div / a
 
+            / html / body / div[1] / section / div[1] / div[2] / div / div[2] / div[1] / div[2] / div[2] / div / div / \
+              div[2] / div / div[2] / div[1] / div / a
+            '''
 
 
             time.sleep(10)

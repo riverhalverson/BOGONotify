@@ -2,23 +2,30 @@ from playwright.sync_api import sync_playwright
 import time
 
 
-
 class Page:
-    #bogoItems = []
+
+    def setupPage(self, session):
+        # Open up a new browser session in headless mode and slow it down to let it load properly
+        browser = session.chromium.launch(headless=False,
+                                    slow_mo=30)
+
+        # Give browser geolocation for store locater function
+        # This gets a warning for incorrect type in PyCharm, the following ignores it
+        # noinspection PyTypeChecker
+        context = browser.new_context(geolocation={"latitude": 28.3164, "longitude": -80.7270},
+                                      permissions=["geolocation"],
+                                      locale="en-US")
+
+        return context, browser
 
     def getBogoItems(self):
-        with sync_playwright() as p:
 
-            # Open up a new browser session in headless mode and slow it down to let it load properly
-            browser = p.chromium.launch(headless=False,
-                                        slow_mo=30)
+        lookFor = "Ghost Protein Cereal with Marshmallows"
 
-            # Give browser geolocation for store locater function
-            # This gets a warning for incorrect type in PyCharm, the following ignores it
-            # noinspection PyTypeChecker
-            context = browser.new_context(geolocation={"latitude": 28.3164, "longitude": -80.7270},
-                                          permissions=["geolocation"],
-                                          locale="en-US")
+        itemList = []
+
+        with sync_playwright() as session:
+            context, browser = Page.setupPage(self, session)
 
             # Opens up a new page with the geolocation parameters
             page = context.new_page()
@@ -28,40 +35,88 @@ class Page:
             time.sleep(.4)
             page.reload()
 
-            # Get total results we will be getting
-            results = str(page.get_by_text("product results").all_inner_texts())
-            resultsSplit = results.split(" ")
-            resultsNum = resultsSplit[0][2:]
-            print(resultsNum, "BOGO results found")
+            # Get total BOGO results found
+            Page.getTotalResult(self, page)
 
-            # Wait for the product grid to load
-            #page.wait_for_selector("ul[data-testid='product-grid']")
+            # Get first page items
+            Page.getItemTitles(self, page, itemList)
 
-            xpath = "//*[@id=" + '"' + "main" + '"' + "]/div[1]/div[2]/div/div[2]/div[1]/div[2]/div[2]/div/div/div[1]/div/div[2]/div[1]/div/a"
+            # Get how many pages we'll have to go through
+            totalPages = page.locator("button.toggle-button:nth-child(8) > span:nth-child(1)").text_content().strip()
+            print("Pages: " + totalPages)
 
+            pageNum = 1
 
-            # Select all product items in the grid
-            time.sleep(2)
-            items = page.locator(xpath)
-            items.scroll_into_view_if_needed()
-            text = items.all_text_contents()
-            print(text)
-            text = items.all()
-            print(text)
-            print(" ")
-            '''
-            / html / body / div[1] / section / div[1] / div[2] / div / div[2] / div[1] / div[2] / div[2] / div / div / \
-              div[1] / div / div[2] / div[1] / div / a
+            for pageNum in range(int(totalPages) - 1):
+                page.locator("span.caretRight:nth-child(1)").click()
+                Page.getItemTitles(self, page, itemList)
+                print("Total items found:" + str(len(itemList)))
 
-            / html / body / div[1] / section / div[1] / div[2] / div / div[2] / div[1] / div[2] / div[2] / div / div / \
-              div[2] / div / div[2] / div[1] / div / a
-            '''
 
 
             time.sleep(10)
             browser.close()
 
-#    def setupDriver(self):
+        return itemList
+
+
+    def getItemTitles(self, page, itemList):
+        Page.scrollToEnd(self, page)
+        lookFor = "Ghost Protein Cereal with Marshmallows"
+
+        className = ".p-grid-item"
+
+        items = page.query_selector_all(className)
+
+        for item in items:
+            text = item.text_content().strip()
+            title = text.split('\n', 1)[0]
+
+            # Add title to list
+            itemList.append(title)
+
+            print("Item found: " + title)
+
+            if title == lookFor:
+                print("****** " + lookFor + " ******")
+
+        return itemList
+
+
+
+    # Takes an xpath or css selector and a page and scrolls to that point manually
+    # Used when items cannot be located unless visible
+    def scrollIntoView(self, path, page):
+        # Scroll to item
+        found = False
+        maxScrolls = 20
+
+        for _ in range(maxScrolls):
+            try:
+                element = page.query_selector(path)
+                if element:
+                    element.scroll_into_view_if_needed()
+                    found = True
+                    break
+            except:
+                pass
+
+            page.mouse.wheel(0, 1000)
+            time.sleep(1)
+
+    def scrollToEnd(self, page):
+        # Item at end of page (copyright notice)
+        EOP = "/ html / body / div[1] / footer / div / div[3] / div"
+
+        Page.scrollIntoView(self, EOP, page)
+
+
+    def getTotalResult(self, page):
+        # Get total results we will be getting
+        results = str(page.get_by_text("product results").all_inner_texts())
+        resultsSplit = results.split(" ")
+        resultsNum = resultsSplit[0][2:]
+        print(resultsNum, "BOGO results found")
 
 
 

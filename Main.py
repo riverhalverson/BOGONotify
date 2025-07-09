@@ -1,21 +1,28 @@
-from PageInteractions import Page
-from Database import Database
-from Display import Display
-import time
-import smtplib
+from UI.MainWindow import Ui_MainWindow
 import sys
-
+from PySide6 import QtCore as qtc
+from PySide6 import QtWidgets as qtw
+from PySide6 import QtGui as qtg
+from PySide6.QtWidgets import QTableWidgetItem
+from Display import MainWindow
+from Database import Database
 
 def main():
     requestedItems = ("Post Great Grains Cereal")
 
     data = Database()
-    display = Display()
-    display.initDisplay()
 
-    num = data.getCustomerLength()
-    print(num)
+    app = qtw.QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
 
+
+
+
+
+
+
+    sys.exit(app.exec())
 
 
 

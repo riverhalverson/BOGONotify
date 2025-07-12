@@ -8,7 +8,7 @@ from Display import MainWindow
 from Database import Database
 
 def main():
-    requestedItems = ("Post Great Grains Cereal")
+    requestedItems = ("Post Great Grains Cereal!")
 
     data = Database()
 

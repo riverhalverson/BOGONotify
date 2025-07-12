@@ -1,5 +1,6 @@
 from playwright.sync_api import sync_playwright
 import time
+from Database import Database
 
 
 class Page:
@@ -19,9 +20,6 @@ class Page:
         return context, browser
 
     def getBogoItems(self):
-
-        lookFor = "Ghost Protein Cereal with Marshmallows"
-
         itemList = []
 
         with sync_playwright() as session:
@@ -52,8 +50,6 @@ class Page:
                 Page.getItemTitles(self, page, itemList)
                 print("Total items found:" + str(len(itemList)))
 
-
-
             time.sleep(10)
             browser.close()
 
@@ -62,7 +58,7 @@ class Page:
 
     def getItemTitles(self, page, itemList):
         Page.scrollToEnd(self, page)
-        lookFor = "Ghost Protein Cereal with Marshmallows"
+        dataBase = Database()
 
         className = ".p-grid-item"
 
@@ -74,15 +70,11 @@ class Page:
 
             # Add title to list
             itemList.append(title)
+            dataBase.addProduct(title)
 
             print("Item found: " + title)
 
-            if title == lookFor:
-                print("****** " + lookFor + " ******")
-
         return itemList
-
-
 
     # Takes an xpath or css selector and a page and scrolls to that point manually
     # Used when items cannot be located unless visible

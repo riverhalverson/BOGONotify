@@ -8,8 +8,6 @@ from Display import MainWindow
 from Database import Database
 
 def main():
-    requestedItems = ("Post Great Grains Cereal!")
-
     data = Database()
 
     app = qtw.QApplication(sys.argv)
@@ -18,23 +16,7 @@ def main():
 
 
 
-
-
-
-
     sys.exit(app.exec())
-
-
-
-
-    #page = Page()
-
-    #bogoItems = page.getBogoItems()
-
-    #for item in bogoItems:
-    #    if requestedItems == item:
-    #        print(item)
-
 
 
 if __name__ == "__main__":

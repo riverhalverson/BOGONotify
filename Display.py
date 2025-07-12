@@ -3,14 +3,14 @@ from PySide6 import QtCore as qtc
 from PySide6 import QtWidgets as qtw
 from PySide6 import QtGui as qtg
 from PySide6.QtWidgets import QTableWidgetItem
-
+from PySide6.QtWidgets import QMainWindow
 from UI.MainWindow import Ui_MainWindow
 from Database import Database
 from PageInteractions import Page
 from Customers import Customer
 
 
-class MainWindow(qtw.QWidget, Ui_MainWindow):
+class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -20,11 +20,11 @@ class MainWindow(qtw.QWidget, Ui_MainWindow):
         self.populateCustomerTable()
         self.populateProductTable()
 
-        self.AddCustomerButton.clicked.connect(self.onAddCustomerClicked)
-        self.AddProductButton.clicked.connect(self.onAddProductClicked)
-        self.ClearProductTableButton.clicked.connect(self.onClearProductTableClicked)
+        self.AddNewCustomerButton.clicked.connect(self.onAddCustomerClicked)
+        self.AddDesiredProductButton.clicked.connect(self.onAddDesiredProductClicked)
+        self.ClearDesiredProductsTableButton.clicked.connect(self.onClearDesiredProductTableClicked)
         self.ClearCustomerTableButton.clicked.connect(self.onClearCustomerTableClicked)
-        self.FindItemsButton.clicked.connect(self.onFindBOGOItemsClicked)
+        self.FindBogoItemsButton.clicked.connect(self.onFindBOGOItemsClicked)
 
     @qtc.Slot()
     def onFindBOGOItemsClicked(self):
@@ -39,43 +39,32 @@ class MainWindow(qtw.QWidget, Ui_MainWindow):
         self.populateCustomerTable()
 
     @qtc.Slot()
-    def onClearProductTableClicked(self):
+    def onClearDesiredProductTableClicked(self):
         dataBase = Database()
-        dataBase.clearProductTable()
+        dataBase.clearDesiredProductTable()
         self.populateProductTable()
 
     @qtc.Slot()
-    def onAddProductClicked(self):
-        product = self.ProductNameInputBox.text()
-        customerID = self.ProductCustomerIDComboBox.currentText()
-
-        print(product, customerID)
-
-        # Clear selections
-        self.ProductNameInputBox.text()
-        self.ProductCustomerIDComboBox.clear()
-
-    @qtc.Slot()
-    def onAddProductClicked(self):
-        product = self.ProductNameInputBox.text()
-        customerID = self.ProductCustomerIDComboBox.currentText()
+    def onAddDesiredProductClicked(self):
+        product = self.AddDesiredProductInputBox.text()
+        customerID = self.AddDesiredProductCustomerIDComboBox.currentText()
 
         if product != "":
             dataBase = Database()
-            dataBase.addProduct(product, customerID)
+            dataBase.addDesiredProduct(product, customerID)
 
             # Clear all input boxes
-            self.ProductNameInputBox.clear()
+            self.AddDesiredProductInputBox.clear()
 
             # Repopulate table with new value
             self.populateProductTable()
 
     @qtc.Slot()
     def onAddCustomerClicked(self):
-        firstName = self.FirstNameInputBox.text()
-        lastName = self.LastNameInputBox.text()
-        carrier = self.CarrierComboBox.currentText()
-        phoneNumber = self.PhoneNumberInputBox.text()
+        firstName = self.CustomerFirstNameInputBox.text()
+        lastName = self.CustomerLastNameInputBox.text()
+        carrier = self.CustomerCarrierComboBox.currentText()
+        phoneNumber = self.CustomerPhoneNumberInputBox.text()
 
         name = firstName + " " + lastName
 
@@ -84,96 +73,105 @@ class MainWindow(qtw.QWidget, Ui_MainWindow):
             dataBase.addCustomer(name, carrier, phoneNumber)
 
             # Clear all input boxes
-            self.FirstNameInputBox.clear()
-            self.LastNameInputBox.clear()
-            self.PhoneNumberInputBox.clear()
+            self.CustomerFirstNameInputBox.clear()
+            self.CustomerLastNameInputBox.clear()
+            self.CustomerPhoneNumberInputBox.clear()
 
             # Repopulate table with new value
             self.populateCustomerTable()
 
-
     def populateCustomerTable(self):
-        self.CustomerTable.setColumnWidth(0, 30)
-        self.CustomerTable.setColumnWidth(1, 130)
-        self.CustomerTable.setColumnWidth(3, 120)
+        self.CustomerTableView.setColumnWidth(0, 30)
+        self.CustomerTableView.setColumnWidth(1, 130)
+        self.CustomerTableView.setColumnWidth(3, 120)
 
         dataBase = Database()
 
         dbTableLength = dataBase.getCustomerLength()
-        qtTableLength = self.CustomerTable.rowCount()
+        qtTableLength = self.CustomerTableView.rowCount()
 
         if dbTableLength != 0 and qtTableLength != dbTableLength:
-            self.CustomerTable.clearContents()
-            self.CustomerTable.setRowCount(0)
+            self.CustomerTableView.clearContents()
+            self.CustomerTableView.setRowCount(0)
 
             self.populateCustomerIDComboBox()
 
             customers = dataBase.getAllCustomers()
 
             for customer in customers:
-                rowPos = self.CustomerTable.rowCount()
-                self.CustomerTable.insertRow(rowPos)
+                rowPos = self.CustomerTableView.rowCount()
+                self.CustomerTableView.insertRow(rowPos)
 
                 customerID = str(customer[0])
                 name = customer[1]
                 carrier = customer[2]
                 phoneNum = customer[3]
 
-                self.CustomerTable.setItem(rowPos, 0, QTableWidgetItem(customerID))
-                self.CustomerTable.setItem(rowPos, 1, QTableWidgetItem(name))
-                self.CustomerTable.setItem(rowPos, 2, QTableWidgetItem(carrier))
-                self.CustomerTable.setItem(rowPos, 3, QTableWidgetItem(phoneNum))
+                self.CustomerTableView.setItem(rowPos, 0, QTableWidgetItem(customerID))
+                self.CustomerTableView.setItem(rowPos, 1, QTableWidgetItem(name))
+                self.CustomerTableView.setItem(rowPos, 2, QTableWidgetItem(carrier))
+                self.CustomerTableView.setItem(rowPos, 3, QTableWidgetItem(phoneNum))
 
-                self.CustomerTable.show()
+                self.CustomerTableView.show()
 
 
     def populateProductTable(self):
-        self.ProductTable.setColumnWidth(0, 290)
-        self.ProductTable.setColumnWidth(1, 90)
+        self.DesiredProductTableView.setColumnWidth(0, 400)
+        self.DesiredProductTableView.setColumnWidth(1, 90)
 
         dataBase = Database()
 
         dbTableLength = dataBase.getProductsLength()
-        qtTableLength = self.ProductTable.rowCount()
+        qtTableLength = self.DesiredProductTableView.rowCount()
 
         if dbTableLength != 0 and qtTableLength != dbTableLength:
-            self.ProductTable.clearContents()
-            self.ProductTable.setRowCount(0)
+            self.DesiredProductTableView.clearContents()
+            self.DesiredProductTableView.setRowCount(0)
 
             products = dataBase.getAllProducts()
 
             for product in products:
-                rowPos = self.ProductTable.rowCount()
-                self.ProductTable.insertRow(rowPos)
+                rowPos = self.DesiredProductTableView.rowCount()
+                self.DesiredProductTableView.insertRow(rowPos)
 
                 productName = product[0]
                 customerID = product[1]
+                customerName = dataBase.getCustomerName(customerID)
 
-                self.ProductTable.setItem(rowPos, 0, QTableWidgetItem(productName))
-                self.ProductTable.setItem(rowPos, 1, QTableWidgetItem(customerID))
 
-                self.ProductTable.show()
+                self.DesiredProductTableView.setItem(rowPos, 0, QTableWidgetItem(productName))
+                self.DesiredProductTableView.setItem(rowPos, 1, QTableWidgetItem(customerName))
+
+                self.DesiredProductTableView.show()
 
     def populateCarrierComboBox(self):
         carriers = {"Verizon", "T-Mobile", "AT&T"}
 
         # Adds all carriers to combo box
         for carrier in carriers:
-            self.CarrierComboBox.addItem(carrier)
+            self.CustomerCarrierComboBox.addItem(carrier)
 
     def populateCustomerIDComboBox(self):
-        self.ProductCustomerIDComboBox.clear()
+        self.AddDesiredProductCustomerIDComboBox.clear()
 
         dataBase = Database()
         customerCount = dataBase.getCustomerLength()
+        customerIdList = []
+
+        for num in range(1, customerCount + 1):
+            customerIdList.append(num)
+
+        print(customerIdList)
+
+
 
         if customerCount == 1:
-            self.ProductCustomerIDComboBox.addItem(str(1))
+            self.AddDesiredProductCustomerIDComboBox.addItem(str(1))
 
         else:
-            # Adds all carriers to combo box
-            for num in range(1, customerCount - 1):
-                self.ProductCustomerIDComboBox.addItem(str(num))
+            # Adds all customer IDs to combobox
+            for num in customerIdList:
+                self.AddDesiredProductCustomerIDComboBox.addItem(str(num))
 
 
 if __name__ == "__main__":

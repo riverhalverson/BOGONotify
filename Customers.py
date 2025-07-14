@@ -7,54 +7,53 @@ class Customer:
 
     def findCustomerItems(self):
         dataBase = Database()
-        page = Page()
         customerNum = dataBase.getCustomerLength()
 
-        print("customer num:", customerNum)
+        print(customerNum, "customers found, looking for their items")
 
         if customerNum > 0:
-            results = page.getBogoItems()
-            #results = ["Protein Cereal", "Kombucha"]
-            print(results)
+            allProducts = dataBase.getAllProducts()
+            print(type(allProducts))
+            for product in allProducts:
+                print(type(product))
 
             if customerNum == 1:
                 matchesFound = ""
 
-                items = dataBase.getCustomersItems(1)
+                desiredProducts = dataBase.getCustomersItems(1)
 
-                print(items)
-
-                for item in items:
-                    itemName = item[0]
-                    if itemName in results:
-                        matchesFound += str(itemName) + "\n"
+                for item in desiredProducts:
+                    if item in allProducts:
+                        matchesFound += str(item) + "\n"
 
                 if len(matchesFound) > 0:
                     message = "The following items from your list were found on BOGO! " + "\n" + matchesFound
                     print(message)
 
                     sms = SMS()
-
                     sms.sendNotification(6085093061,"Verizon", message)
-
 
                     customerInfo = dataBase.getCustomerInfo(1)
                     print(customerInfo)
 
             else:
-                for customer in range(1, customerNum - 1):
+                for customer in range(1, customerNum + 1):
+                    print("Customer ID:", customer, " desired item search starting")
+
                     matchesFound = ""
+                    desiredProducts = dataBase.getCustomersItems(customer)
 
-                    items = dataBase.getCustomersItems(customer)
+                    for item in desiredProducts:
+                        print("Looking in BOGO items for a match for:", item)
 
-                    print(items)
-
-                    for item in items:
-                        if item in results:
+                        if item in allProducts:
                             matchesFound += str(item) + ", "
 
                     if len(matchesFound) > 0:
                         message = "The following items from your list were found on BOGO!: " + matchesFound
                         print(message)
+
+                        sms = SMS()
+                        sms.sendNotification(6085093061, "Verizon", message)
 
                         customerInfo = dataBase.getCustomerInfo(customer)

@@ -7,11 +7,13 @@ import dotenv
 import aiosmtplib
 import os
 from dotenv import load_dotenv
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 HOST = "smpt.gmail.com"
 
 CARRIER_MAP = {
-    "verizon": "vtext.com",
+    "verizon": "@vzwpix.com",
     "tmobile": "tmomail.net",
     "sprint": "messaging.sprintpcs.com",
     "at&t": "txt.att.net",
@@ -21,8 +23,6 @@ CARRIER_MAP = {
 }
 
 class SMS:
-
-
 
     def sendNotification(self, phoneNum, carrier, message):
         load_dotenv()
@@ -36,7 +36,14 @@ class SMS:
         car = carrier.lower()
         subject = "BOGO Notification"
 
-        phoneEmail = str(phoneNum) + "@vtext.com"
+        msg = MIMEMultipart()
+        msg['Subject'] = "BOGO Notifier"
+        msg['From'] = "riverhalverson@gmail.com"
+        body = message
+
+        msg.attach(MIMEText(body, 'plain', 'utf-8'))
+
+        phoneEmail = str(phoneNum) + "@vzwpix.com"
 
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.connect("smtp.gmail.com", 587)
@@ -45,37 +52,5 @@ class SMS:
         server.ehlo()
 
         server.login(email, pswd)
-        server.sendmail(email, phoneEmail, message)
+        server.sendmail(email, phoneEmail, msg.as_string())
         server.quit()
-
-
-
-
-    async def sendTxt(self,
-            num: Union[str, int], carrier: str, email: str, pword: str, msg: str, subj: str
-    ) -> Tuple[dict, str]:
-        to_email = CARRIER_MAP[carrier]
-
-        # build message
-        message = EmailMessage()
-        message["From"] = email
-        message["To"] = f"{num}@{to_email}"
-        message["Subject"] = subj
-        message.set_content(msg)
-
-        # send
-        send_kws = dict(username=email, password=pword, hostname=HOST, port=587, start_tls=True)
-        res = await aiosmtplib.send(message, **send_kws)  # type: ignore
-        msg = "failed" if not re.search(r"\sOK\s", res[1]) else "succeeded"
-        print(msg)
-        return res
-
-
-
-if __name__ == "__main__":
-    sms = SMS()
-    message = "hi"
-
-    coro = sms.sendNotification(6085093061, "Verizon", message)
-
-    asyncio.run(coro)

@@ -18,6 +18,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.populateCarrierComboBox()
         self.populateCustomerIDComboBox()
         self.populateCustomerTable()
+        self.populateDesiredProductTable()
         self.populateProductTable()
 
         self.AddNewCustomerButton.clicked.connect(self.onAddCustomerClicked)
@@ -25,23 +26,65 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.ClearDesiredProductsTableButton.clicked.connect(self.onClearDesiredProductTableClicked)
         self.ClearCustomerTableButton.clicked.connect(self.onClearCustomerTableClicked)
         self.FindBogoItemsButton.clicked.connect(self.onFindBOGOItemsClicked)
+        self.FindCustomerItemsButton.clicked.connect(self.onFindCustomerItemsClicked)
+        self.DeleteDesiredProductButton.clicked.connect(self.onDeleteDesiredItemsClicked)
+        self.DeleteCustomerButton.clicked.connect(self.onDeleteCustomerClicked)
+
+    @qtc.Slot()
+    def onDeleteCustomerClicked(self):
+        dataBase = Database()
+
+        customer = self.CustomerTableView.selectedItems()
+        customerName = customer[0].text()
+
+        dataBase.removeCustomer(customerName)
+
+        self.CustomerTableView.clear()
+        self.populateCustomerTable()
+
+    @qtc.Slot()
+    def onDeleteDesiredItemsClicked(self):
+        dataBase = Database()
+
+        product = self.DesiredProductTableView.selectedItems()
+        productName = product[0].text()
+
+        dataBase.removeDesiredProduct(productName)
+
+        self.DesiredProductTableView.clear()
+        self.populateDesiredProductTable()
 
     @qtc.Slot()
     def onFindBOGOItemsClicked(self):
-        customer = Customer()
+        dataBase = Database()
+        page = Page()
 
+        # Get list of all Bogo items
+        results = page.getBogoItems()
+
+        # Clear table and find all BOGO items
+        dataBase.clearProductTable()
+        dataBase.addBogoProducts(results)
+
+    @qtc.Slot()
+    def onFindCustomerItemsClicked(self):
+        print("Finding customer items")
+
+        customer = Customer()
         customer.findCustomerItems()
 
     @qtc.Slot()
     def onClearCustomerTableClicked(self):
         dataBase = Database()
         dataBase.clearCustomerTable()
+        self.CustomerTableView.clear()
         self.populateCustomerTable()
 
     @qtc.Slot()
     def onClearDesiredProductTableClicked(self):
         dataBase = Database()
         dataBase.clearDesiredProductTable()
+        self.DesiredProductTableView.clear()
         self.populateProductTable()
 
     @qtc.Slot()
@@ -57,7 +100,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.AddDesiredProductInputBox.clear()
 
             # Repopulate table with new value
-            self.populateProductTable()
+            self.DesiredProductTableView.clear()
+            self.populateDesiredProductTable()
 
     @qtc.Slot()
     def onAddCustomerClicked(self):
@@ -114,21 +158,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
                 self.CustomerTableView.show()
 
-
-    def populateProductTable(self):
+    def populateDesiredProductTable(self):
         self.DesiredProductTableView.setColumnWidth(0, 400)
         self.DesiredProductTableView.setColumnWidth(1, 90)
 
         dataBase = Database()
 
-        dbTableLength = dataBase.getProductsLength()
+        dbTableLength = dataBase.getDesiredProductsLength()
         qtTableLength = self.DesiredProductTableView.rowCount()
 
         if dbTableLength != 0 and qtTableLength != dbTableLength:
             self.DesiredProductTableView.clearContents()
             self.DesiredProductTableView.setRowCount(0)
 
-            products = dataBase.getAllProducts()
+            products = dataBase.getAllDesiredProducts()
 
             for product in products:
                 rowPos = self.DesiredProductTableView.rowCount()
@@ -138,11 +181,32 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 customerID = product[1]
                 customerName = dataBase.getCustomerName(customerID)
 
-
                 self.DesiredProductTableView.setItem(rowPos, 0, QTableWidgetItem(productName))
                 self.DesiredProductTableView.setItem(rowPos, 1, QTableWidgetItem(customerName))
 
                 self.DesiredProductTableView.show()
+
+    def populateProductTable(self):
+        self.ProductTableView.setColumnWidth(0, 500)
+
+        dataBase = Database()
+
+        dbTableLength = dataBase.getProductsLength()
+        qtTableLength = self.ProductTableView.rowCount()
+
+        if dbTableLength != 0 and qtTableLength != dbTableLength:
+            self.ProductTableView.clearContents()
+            self.ProductTableView.setRowCount(0)
+
+            products = dataBase.getAllProducts()
+
+            for product in products:
+                rowPos = self.ProductTableView.rowCount()
+                self.ProductTableView.insertRow(rowPos)
+
+                self.ProductTableView.setItem(rowPos, 0, QTableWidgetItem(product))
+
+                self.ProductTableView.show()
 
     def populateCarrierComboBox(self):
         carriers = {"Verizon", "T-Mobile", "AT&T"}

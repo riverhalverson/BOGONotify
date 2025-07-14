@@ -55,7 +55,6 @@ class Page:
 
         return itemList
 
-
     def getItemTitles(self, page, itemList):
         Page.scrollToEnd(self, page)
         dataBase = Database()
@@ -70,9 +69,8 @@ class Page:
 
             # Add title to list
             itemList.append(title)
-            dataBase.addProduct(title)
-
             print("Item found: " + title)
+
 
         return itemList
 
@@ -102,7 +100,6 @@ class Page:
 
         Page.scrollIntoView(self, EOP, page)
 
-
     def getTotalResult(self, page):
         # Get total results we will be getting
         results = str(page.get_by_text("product results").all_inner_texts())
@@ -110,6 +107,3 @@ class Page:
         resultsNum = resultsSplit[0][2:]
         print(resultsNum, "BOGO results found")
 
-
-
-#    def getItems(self):

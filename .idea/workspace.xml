@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="470e4f58-7158-4b7c-98ae-030f73eeb2e2" name="Changes" comment="Merged branch onto master">
+    <list default="true" id="470e4f58-7158-4b7c-98ae-030f73eeb2e2" name="Changes" comment="Added New page for all products found">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Customers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Customers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Display.py" beforeDir="false" afterPath="$PROJECT_DIR$/Display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PageInteractions.py" beforeDir="false" afterPath="$PROJECT_DIR$/PageInteractions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SMS.py" beforeDir="false" afterPath="$PROJECT_DIR$/SMS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UI/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI/MainWindow.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +153,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-53e2683a6804-9cdd278e9d02-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.26094.141" />
+        <option value="bundled-python-sdk-4c141bd692a7-e2d783800521-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.26927.90" />
       </set>
     </attachedChunks>
   </component>
@@ -196,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752344306244</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added New page for all products found">
+      <option name="closed" value="true" />
+      <created>1752356001161</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752356001161</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -230,6 +239,7 @@
     <MESSAGE value="Changed from selenium to Playwright, much more streamlined. Got webpage loading with geolocation working well" />
     <MESSAGE value="Got reading in all BOGO items working great. Started implementing SQlite and the display." />
     <MESSAGE value="Merged branch onto master" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged branch onto master" />
+    <MESSAGE value="Added New page for all products found" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added New page for all products found" />
   </component>
 </project>

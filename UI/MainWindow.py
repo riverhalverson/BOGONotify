@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainWindowGPdfrY.ui'
+## Form generated from reading UI file 'MainWindowoYsEkv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.0
 ##
@@ -24,12 +24,12 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(513, 756)
+        MainWindow.resize(513, 880)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
-        self.tabWidget.setGeometry(QRect(0, 0, 511, 751))
+        self.tabWidget.setGeometry(QRect(0, 0, 511, 861))
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.label = QLabel(self.tab)
@@ -104,7 +104,11 @@ class Ui_MainWindow(object):
         __qtablewidgetitem3 = QTableWidgetItem()
         self.CustomerTableView.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         self.CustomerTableView.setObjectName(u"CustomerTableView")
-        self.CustomerTableView.setGeometry(QRect(0, 330, 511, 391))
+        self.CustomerTableView.setGeometry(QRect(0, 330, 511, 461))
+        self.DeleteCustomerButton = QPushButton(self.tab)
+        self.DeleteCustomerButton.setObjectName(u"DeleteCustomerButton")
+        self.DeleteCustomerButton.setGeometry(QRect(170, 800, 171, 26))
+        self.DeleteCustomerButton.setFont(font2)
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
@@ -121,7 +125,7 @@ class Ui_MainWindow(object):
         __qtablewidgetitem5 = QTableWidgetItem()
         self.DesiredProductTableView.setHorizontalHeaderItem(1, __qtablewidgetitem5)
         self.DesiredProductTableView.setObjectName(u"DesiredProductTableView")
-        self.DesiredProductTableView.setGeometry(QRect(0, 200, 511, 521))
+        self.DesiredProductTableView.setGeometry(QRect(0, 200, 511, 591))
         self.label_8 = QLabel(self.tab_2)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setGeometry(QRect(0, 20, 511, 20))
@@ -151,26 +155,20 @@ class Ui_MainWindow(object):
         self.AddDesiredProductButton.setObjectName(u"AddDesiredProductButton")
         self.AddDesiredProductButton.setGeometry(QRect(340, 110, 141, 26))
         self.AddDesiredProductButton.setFont(font2)
+        self.DeleteDesiredProductButton = QPushButton(self.tab_2)
+        self.DeleteDesiredProductButton.setObjectName(u"DeleteDesiredProductButton")
+        self.DeleteDesiredProductButton.setGeometry(QRect(170, 800, 171, 26))
+        self.DeleteDesiredProductButton.setFont(font2)
         self.tabWidget.addTab(self.tab_2, "")
-        self.label_10.raise_()
-        self.label_7.raise_()
-        self.DesiredProductTableView.raise_()
-        self.label_8.raise_()
-        self.label_9.raise_()
-        self.AddDesiredProductInputBox.raise_()
-        self.AddDesiredProductCustomerIDComboBox.raise_()
-        self.AddDesiredProductButton.raise_()
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
-        self.DesiredProductTableView_2 = QTableWidget(self.tab_3)
-        if (self.DesiredProductTableView_2.columnCount() < 2):
-            self.DesiredProductTableView_2.setColumnCount(2)
+        self.ProductTableView = QTableWidget(self.tab_3)
+        if (self.ProductTableView.columnCount() < 1):
+            self.ProductTableView.setColumnCount(1)
         __qtablewidgetitem6 = QTableWidgetItem()
-        self.DesiredProductTableView_2.setHorizontalHeaderItem(0, __qtablewidgetitem6)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        self.DesiredProductTableView_2.setHorizontalHeaderItem(1, __qtablewidgetitem7)
-        self.DesiredProductTableView_2.setObjectName(u"DesiredProductTableView_2")
-        self.DesiredProductTableView_2.setGeometry(QRect(0, 50, 511, 681))
+        self.ProductTableView.setHorizontalHeaderItem(0, __qtablewidgetitem6)
+        self.ProductTableView.setObjectName(u"ProductTableView")
+        self.ProductTableView.setGeometry(QRect(0, 50, 511, 771))
         self.lineEdit = QLineEdit(self.tab_3)
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setGeometry(QRect(10, 10, 491, 26))
@@ -194,6 +192,10 @@ class Ui_MainWindow(object):
         self.FindBogoItemsButton.setObjectName(u"FindBogoItemsButton")
         self.FindBogoItemsButton.setGeometry(QRect(160, 190, 201, 26))
         self.FindBogoItemsButton.setFont(font2)
+        self.FindCustomerItemsButton = QPushButton(self.tab_4)
+        self.FindCustomerItemsButton.setObjectName(u"FindCustomerItemsButton")
+        self.FindCustomerItemsButton.setGeometry(QRect(160, 240, 201, 26))
+        self.FindCustomerItemsButton.setFont(font2)
         self.tabWidget.addTab(self.tab_4, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
@@ -202,7 +204,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -220,31 +222,32 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem = self.CustomerTableView.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"ID", None));
         ___qtablewidgetitem1 = self.CustomerTableView.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Customer Name", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
         ___qtablewidgetitem2 = self.CustomerTableView.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Carrier", None));
         ___qtablewidgetitem3 = self.CustomerTableView.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Phone #", None));
+        self.DeleteCustomerButton.setText(QCoreApplication.translate("MainWindow", u"Delete Customer", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Add Customer", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Product List", None))
         ___qtablewidgetitem4 = self.DesiredProductTableView.horizontalHeaderItem(0)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Product Name", None));
         ___qtablewidgetitem5 = self.DesiredProductTableView.horizontalHeaderItem(1)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Customer", None));
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Customer ID", None));
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Desired Products", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Product Name", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Customer ID", None))
         self.AddDesiredProductButton.setText(QCoreApplication.translate("MainWindow", u"Add Product", None))
+        self.DeleteDesiredProductButton.setText(QCoreApplication.translate("MainWindow", u"Delete Product", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Desired Products", None))
-        ___qtablewidgetitem6 = self.DesiredProductTableView_2.horizontalHeaderItem(0)
+        ___qtablewidgetitem6 = self.ProductTableView.horizontalHeaderItem(0)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Product Name", None));
-        ___qtablewidgetitem7 = self.DesiredProductTableView_2.horizontalHeaderItem(1)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Customer ID", None));
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"All Products", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"App Controls", None))
         self.ClearDesiredProductsTableButton.setText(QCoreApplication.translate("MainWindow", u"Clear Desired Products Table", None))
         self.ClearCustomerTableButton.setText(QCoreApplication.translate("MainWindow", u"Clear Customer Table", None))
         self.FindBogoItemsButton.setText(QCoreApplication.translate("MainWindow", u"Find BOGO Items", None))
+        self.FindCustomerItemsButton.setText(QCoreApplication.translate("MainWindow", u"Find Customer Items", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Controls", None))
     # retranslateUi
 

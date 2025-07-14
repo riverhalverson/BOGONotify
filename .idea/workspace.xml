@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="470e4f58-7158-4b7c-98ae-030f73eeb2e2" name="Changes" comment="Added New page for all products found">
+    <list default="true" id="470e4f58-7158-4b7c-98ae-030f73eeb2e2" name="Changes" comment="Got selection delete functionality added for products and customers, got found bogo items added to a database and a tableview to display them">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Customers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Customers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Database.py" beforeDir="false" afterPath="$PROJECT_DIR$/Database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Display.py" beforeDir="false" afterPath="$PROJECT_DIR$/Display.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PageInteractions.py" beforeDir="false" afterPath="$PROJECT_DIR$/PageInteractions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SMS.py" beforeDir="false" afterPath="$PROJECT_DIR$/SMS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/MainWindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/UI/MainWindow.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752356001161</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Got selection delete functionality added for products and customers, got found bogo items added to a database and a tableview to display them">
+      <option name="closed" value="true" />
+      <created>1752458200432</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752458200432</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -240,6 +244,7 @@
     <MESSAGE value="Got reading in all BOGO items working great. Started implementing SQlite and the display." />
     <MESSAGE value="Merged branch onto master" />
     <MESSAGE value="Added New page for all products found" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added New page for all products found" />
+    <MESSAGE value="Got selection delete functionality added for products and customers, got found bogo items added to a database and a tableview to display them" />
+    <option name="LAST_COMMIT_MESSAGE" value="Got selection delete functionality added for products and customers, got found bogo items added to a database and a tableview to display them" />
   </component>
 </project>

@@ -13,9 +13,7 @@ class Customer:
 
         if customerNum > 0:
             allProducts = dataBase.getAllProducts()
-            print(type(allProducts))
             for product in allProducts:
-                print(type(product))
 
             if customerNum == 1:
                 matchesFound = ""
@@ -46,14 +44,18 @@ class Customer:
                     for item in desiredProducts:
                         print("Looking in BOGO items for a match for:", item)
 
-                        if item in allProducts:
-                            matchesFound += str(item) + ", "
+                        for bogoItem in allProducts:
+                            if item in bogoItem:
+                                print("Item Found!:", item, "in bogo item:", bogoItem)
+                                matchesFound += str(bogoItem) + "\n"
+
 
                     if len(matchesFound) > 0:
-                        message = "The following items from your list were found on BOGO!: " + matchesFound
+                        message = "The following items from your list were found on BOGO!: \n" + matchesFound
                         print(message)
 
                         sms = SMS()
-                        sms.sendNotification(6085093061, "Verizon", message)
+                        #sms.sendNotification(6085093061, "Verizon", message)
+                        sms.sendEmail(message)
 
                         customerInfo = dataBase.getCustomerInfo(customer)

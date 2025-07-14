@@ -54,3 +54,26 @@ class SMS:
         server.login(email, pswd)
         server.sendmail(email, phoneEmail, msg.as_string())
         server.quit()
+
+    def sendEmail(self, message):
+        load_dotenv()
+
+        email = os.getenv("EMAILAD")
+        pswd = os.getenv("EMAILPS")
+
+        msg = MIMEMultipart()
+        msg['Subject'] = "BOGO Notifier"
+        msg['From'] = "riverhalverson@gmail.com"
+        body = message
+
+        msg.attach(MIMEText(body, 'plain', 'utf-8'))
+
+        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server.connect("smtp.gmail.com", 587)
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
+
+        server.login(email, pswd)
+        server.sendmail(email, "riverhalverson@gmail.com", msg.as_string())
+        server.quit()

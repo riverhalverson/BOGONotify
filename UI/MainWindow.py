@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainWindowoYsEkv.ui'
+## Form generated from reading UI file 'MainWindowpIYpPa.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.9.0
 ##
@@ -24,12 +24,13 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(513, 880)
+        MainWindow.resize(511, 880)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tabWidget.setGeometry(QRect(0, 0, 511, 861))
+        self.tabWidget.setStyleSheet(u"background-color: rgb(45,45,45)")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.label = QLabel(self.tab)
@@ -72,21 +73,51 @@ class Ui_MainWindow(object):
         self.CustomerFirstNameInputBox = QLineEdit(self.tab)
         self.CustomerFirstNameInputBox.setObjectName(u"CustomerFirstNameInputBox")
         self.CustomerFirstNameInputBox.setGeometry(QRect(270, 80, 161, 26))
+        self.CustomerFirstNameInputBox.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
         self.CustomerLastNameInputBox = QLineEdit(self.tab)
         self.CustomerLastNameInputBox.setObjectName(u"CustomerLastNameInputBox")
         self.CustomerLastNameInputBox.setGeometry(QRect(270, 120, 161, 26))
+        self.CustomerLastNameInputBox.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
         self.CustomerPhoneNumberInputBox = QLineEdit(self.tab)
         self.CustomerPhoneNumberInputBox.setObjectName(u"CustomerPhoneNumberInputBox")
         self.CustomerPhoneNumberInputBox.setGeometry(QRect(270, 200, 161, 26))
+        self.CustomerPhoneNumberInputBox.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
         self.CustomerCarrierComboBox = QComboBox(self.tab)
         self.CustomerCarrierComboBox.setObjectName(u"CustomerCarrierComboBox")
         self.CustomerCarrierComboBox.setGeometry(QRect(270, 160, 161, 26))
+        self.CustomerCarrierComboBox.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 0px;\n"
+"border-radius: 10px;\n"
+"")
         self.AddNewCustomerButton = QPushButton(self.tab)
         self.AddNewCustomerButton.setObjectName(u"AddNewCustomerButton")
         self.AddNewCustomerButton.setGeometry(QRect(280, 240, 141, 26))
         font2 = QFont()
         font2.setPointSize(13)
         self.AddNewCustomerButton.setFont(font2)
+        self.AddNewCustomerButton.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
         self.label_6 = QLabel(self.tab)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(0, 300, 511, 20))
@@ -105,10 +136,17 @@ class Ui_MainWindow(object):
         self.CustomerTableView.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         self.CustomerTableView.setObjectName(u"CustomerTableView")
         self.CustomerTableView.setGeometry(QRect(0, 330, 511, 461))
+        self.CustomerTableView.setStyleSheet(u"")
         self.DeleteCustomerButton = QPushButton(self.tab)
         self.DeleteCustomerButton.setObjectName(u"DeleteCustomerButton")
         self.DeleteCustomerButton.setGeometry(QRect(170, 800, 171, 26))
         self.DeleteCustomerButton.setFont(font2)
+        self.DeleteCustomerButton.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
@@ -134,6 +172,12 @@ class Ui_MainWindow(object):
         self.AddDesiredProductCustomerIDComboBox = QComboBox(self.tab_2)
         self.AddDesiredProductCustomerIDComboBox.setObjectName(u"AddDesiredProductCustomerIDComboBox")
         self.AddDesiredProductCustomerIDComboBox.setGeometry(QRect(160, 110, 111, 26))
+        self.AddDesiredProductCustomerIDComboBox.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 0px;\n"
+"border-radius: 10px;\n"
+"")
         self.label_9 = QLabel(self.tab_2)
         self.label_9.setObjectName(u"label_9")
         self.label_9.setGeometry(QRect(0, 70, 511, 20))
@@ -143,7 +187,7 @@ class Ui_MainWindow(object):
         self.label_9.setIndent(20)
         self.label_10 = QLabel(self.tab_2)
         self.label_10.setObjectName(u"label_10")
-        self.label_10.setGeometry(QRect(0, 110, 511, 20))
+        self.label_10.setGeometry(QRect(0, 110, 161, 20))
         self.label_10.setFont(font1)
         self.label_10.setAlignment(Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignVCenter)
         self.label_10.setMargin(0)
@@ -151,14 +195,32 @@ class Ui_MainWindow(object):
         self.AddDesiredProductInputBox = QLineEdit(self.tab_2)
         self.AddDesiredProductInputBox.setObjectName(u"AddDesiredProductInputBox")
         self.AddDesiredProductInputBox.setGeometry(QRect(160, 70, 321, 26))
+        self.AddDesiredProductInputBox.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
         self.AddDesiredProductButton = QPushButton(self.tab_2)
         self.AddDesiredProductButton.setObjectName(u"AddDesiredProductButton")
         self.AddDesiredProductButton.setGeometry(QRect(340, 110, 141, 26))
         self.AddDesiredProductButton.setFont(font2)
+        self.AddDesiredProductButton.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
         self.DeleteDesiredProductButton = QPushButton(self.tab_2)
         self.DeleteDesiredProductButton.setObjectName(u"DeleteDesiredProductButton")
         self.DeleteDesiredProductButton.setGeometry(QRect(170, 800, 171, 26))
         self.DeleteDesiredProductButton.setFont(font2)
+        self.DeleteDesiredProductButton.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
@@ -184,18 +246,52 @@ class Ui_MainWindow(object):
         self.ClearDesiredProductsTableButton.setObjectName(u"ClearDesiredProductsTableButton")
         self.ClearDesiredProductsTableButton.setGeometry(QRect(140, 90, 241, 26))
         self.ClearDesiredProductsTableButton.setFont(font2)
+        self.ClearDesiredProductsTableButton.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
         self.ClearCustomerTableButton = QPushButton(self.tab_4)
         self.ClearCustomerTableButton.setObjectName(u"ClearCustomerTableButton")
         self.ClearCustomerTableButton.setGeometry(QRect(160, 140, 201, 26))
         self.ClearCustomerTableButton.setFont(font2)
-        self.FindBogoItemsButton = QPushButton(self.tab_4)
-        self.FindBogoItemsButton.setObjectName(u"FindBogoItemsButton")
-        self.FindBogoItemsButton.setGeometry(QRect(160, 190, 201, 26))
-        self.FindBogoItemsButton.setFont(font2)
+        self.ClearCustomerTableButton.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
+        self.FindPublixBogoItemsButton = QPushButton(self.tab_4)
+        self.FindPublixBogoItemsButton.setObjectName(u"FindPublixBogoItemsButton")
+        self.FindPublixBogoItemsButton.setGeometry(QRect(160, 190, 201, 26))
+        self.FindPublixBogoItemsButton.setFont(font2)
+        self.FindPublixBogoItemsButton.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
         self.FindCustomerItemsButton = QPushButton(self.tab_4)
         self.FindCustomerItemsButton.setObjectName(u"FindCustomerItemsButton")
-        self.FindCustomerItemsButton.setGeometry(QRect(160, 240, 201, 26))
+        self.FindCustomerItemsButton.setGeometry(QRect(160, 290, 201, 26))
         self.FindCustomerItemsButton.setFont(font2)
+        self.FindCustomerItemsButton.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
+        self.FindChewDealsButton = QPushButton(self.tab_4)
+        self.FindChewDealsButton.setObjectName(u"FindChewDealsButton")
+        self.FindChewDealsButton.setGeometry(QRect(160, 240, 201, 26))
+        self.FindChewDealsButton.setFont(font2)
+        self.FindChewDealsButton.setStyleSheet(u"background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);\n"
+"border-style: solid;\n"
+"border-color: dimgrey;\n"
+"border-width: 2px;\n"
+"border-radius: 10px;\n"
+"")
         self.tabWidget.addTab(self.tab_4, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
@@ -204,7 +300,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -246,8 +342,9 @@ class Ui_MainWindow(object):
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"App Controls", None))
         self.ClearDesiredProductsTableButton.setText(QCoreApplication.translate("MainWindow", u"Clear Desired Products Table", None))
         self.ClearCustomerTableButton.setText(QCoreApplication.translate("MainWindow", u"Clear Customer Table", None))
-        self.FindBogoItemsButton.setText(QCoreApplication.translate("MainWindow", u"Find BOGO Items", None))
+        self.FindPublixBogoItemsButton.setText(QCoreApplication.translate("MainWindow", u"Find Publix BOGO Items", None))
         self.FindCustomerItemsButton.setText(QCoreApplication.translate("MainWindow", u"Find Customer Items", None))
+        self.FindChewDealsButton.setText(QCoreApplication.translate("MainWindow", u"Find Chewy Deals", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Controls", None))
     # retranslateUi
 

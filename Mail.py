@@ -30,9 +30,6 @@ class SMS:
         email = os.getenv("EMAILAD")
         pswd = os.getenv("EMAILPS")
 
-        print(email)
-        print(pswd)
-
         car = carrier.lower()
         subject = "BOGO Notification"
 

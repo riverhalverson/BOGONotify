@@ -25,7 +25,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.AddDesiredProductButton.clicked.connect(self.onAddDesiredProductClicked)
         self.ClearDesiredProductsTableButton.clicked.connect(self.onClearDesiredProductTableClicked)
         self.ClearCustomerTableButton.clicked.connect(self.onClearCustomerTableClicked)
-        self.FindBogoItemsButton.clicked.connect(self.onFindBOGOItemsClicked)
+        self.FindPublixBogoItemsButton.clicked.connect(self.onFindBOGOItemsClicked)
+        self.FindChewDealsButton.clicked.connect(self.onFindChewyDealsClicked)
         self.FindCustomerItemsButton.clicked.connect(self.onFindCustomerItemsClicked)
         self.DeleteDesiredProductButton.clicked.connect(self.onDeleteDesiredItemsClicked)
         self.DeleteCustomerButton.clicked.connect(self.onDeleteCustomerClicked)
@@ -60,11 +61,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         page = Page()
 
         # Get list of all Bogo items
-        results = page.getBogoItems()
+        results = page.getPublixBogoItems()
 
         # Clear table and find all BOGO items
         dataBase.clearProductTable()
         dataBase.addBogoProducts(results)
+
+    @qtc.Slot()
+    def onFindChewyDealsClicked(self):
+        page = Page()
+
+        results = page.getChewyItems()
+
 
     @qtc.Slot()
     def onFindCustomerItemsClicked(self):

@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>511</width>
+    <height>880</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>511</width>
+      <height>861</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(45,45,45)</string>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Add Customer</string>
+     </attribute>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>511</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>17</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Customer Information</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>80</y>
+        <width>511</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>First Name</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <property name="indent">
+       <number>110</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>120</y>
+        <width>511</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Last Name</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <property name="indent">
+       <number>110</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>160</y>
+        <width>511</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Carrier</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <property name="indent">
+       <number>110</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>200</y>
+        <width>511</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Phone Number</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <property name="indent">
+       <number>110</number>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="CustomerFirstNameInputBox">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>80</y>
+        <width>161</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="CustomerLastNameInputBox">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>120</y>
+        <width>161</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="CustomerPhoneNumberInputBox">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>200</y>
+        <width>161</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="CustomerCarrierComboBox">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>160</y>
+        <width>161</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 0px;
+border-radius: 10px;
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="AddNewCustomerButton">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>240</y>
+        <width>141</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string>Add Customer</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>300</y>
+        <width>511</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>17</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Customer Information</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="CustomerTableView">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>330</y>
+        <width>511</width>
+        <height>461</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>New Column</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Carrier</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Phone #</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="DeleteCustomerButton">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>800</y>
+        <width>171</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string>Delete Customer</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Desired Products</string>
+     </attribute>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>170</y>
+        <width>511</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>17</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Product List</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="DesiredProductTableView">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>200</y>
+        <width>511</width>
+        <height>591</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Product Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Customer ID</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>511</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>17</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Desired Products</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="AddDesiredProductCustomerIDComboBox">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>110</y>
+        <width>111</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 0px;
+border-radius: 10px;
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>70</y>
+        <width>511</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Product Name</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <property name="indent">
+       <number>20</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>110</y>
+        <width>161</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Customer ID</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <property name="indent">
+       <number>20</number>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="AddDesiredProductInputBox">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>70</y>
+        <width>321</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="AddDesiredProductButton">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>110</y>
+        <width>141</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string>Add Product</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="DeleteDesiredProductButton">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>800</y>
+        <width>171</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string>Delete Product</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>All Products</string>
+     </attribute>
+     <widget class="QTableWidget" name="ProductTableView">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>50</y>
+        <width>511</width>
+        <height>771</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Product Name</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>491</width>
+        <height>26</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Controls</string>
+     </attribute>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>30</y>
+        <width>511</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>17</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>App Controls</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ClearDesiredProductsTableButton">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>90</y>
+        <width>241</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string>Clear Desired Products Table</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ClearCustomerTableButton">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>140</y>
+        <width>201</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string>Clear Customer Table</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="FindPublixBogoItemsButton">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>190</y>
+        <width>201</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string>Find Publix BOGO Items</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="FindCustomerItemsButton">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>290</y>
+        <width>201</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string>Find Customer Items</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="FindChewDealsButton">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>240</y>
+        <width>201</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string>Find Chewy Deals</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

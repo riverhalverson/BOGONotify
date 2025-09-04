@@ -27,7 +27,7 @@
      <string notr="true">background-color: rgb(45,45,45)</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -300,7 +300,7 @@ border-radius: 10px;
       </column>
       <column>
        <property name="text">
-        <string>New Column</string>
+        <string>Name</string>
        </property>
       </column>
       <column>

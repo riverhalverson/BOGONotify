@@ -30,7 +30,7 @@ class Customer:
                     print(message)
 
                     sms = SMS()
-                    sms.sendNotification(6085093061,"Verizon", message)
+                    #sms.sendNotification(,"Verizon", message)
 
                     customerInfo = dataBase.getCustomerInfo(1)
                     print("Customer Info:", customerInfo)

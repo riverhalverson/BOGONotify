@@ -10,12 +10,19 @@ import requests
 import json
 from playwright.sync_api import sync_playwright
 import re
+from PySide6 import QtCore, QtGui, QtWidgets
+from PySide6.QtUiTools import QUiLoader
 
 def main():
     data = Database()
-
+    '''
     app = qtw.QApplication(sys.argv)
     window = MainWindow()
+    window.show()
+    '''
+    loader = QUiLoader()
+    app = QtWidgets.QApplication(sys.argv)
+    window = loader.load("UI/MainWindow.ui", None)
     window.show()
 
     sys.exit(app.exec())

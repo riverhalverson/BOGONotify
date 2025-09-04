@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>513</width>
-    <height>756</height>
+    <width>511</width>
+    <height>880</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,11 +20,14 @@
       <x>0</x>
       <y>0</y>
       <width>511</width>
-      <height>751</height>
+      <height>861</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(45,45,45)</string>
+    </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -168,6 +171,14 @@
         <height>26</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
      </widget>
      <widget class="QLineEdit" name="CustomerLastNameInputBox">
       <property name="geometry">
@@ -177,6 +188,14 @@
         <width>161</width>
         <height>26</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="CustomerPhoneNumberInputBox">
@@ -188,6 +207,14 @@
         <height>26</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
      </widget>
      <widget class="QComboBox" name="CustomerCarrierComboBox">
       <property name="geometry">
@@ -197,6 +224,14 @@
         <width>161</width>
         <height>26</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 0px;
+border-radius: 10px;
+</string>
       </property>
      </widget>
      <widget class="QPushButton" name="AddNewCustomerButton">
@@ -212,6 +247,14 @@
        <font>
         <pointsize>13</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
       </property>
       <property name="text">
        <string>Add Customer</string>
@@ -244,8 +287,11 @@
         <x>0</x>
         <y>330</y>
         <width>511</width>
-        <height>391</height>
+        <height>461</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
       <column>
        <property name="text">
@@ -254,7 +300,7 @@
       </column>
       <column>
        <property name="text">
-        <string>Customer Name</string>
+        <string>Name</string>
        </property>
       </column>
       <column>
@@ -267,6 +313,32 @@
         <string>Phone #</string>
        </property>
       </column>
+     </widget>
+     <widget class="QPushButton" name="DeleteCustomerButton">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>800</y>
+        <width>171</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string>Delete Customer</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
@@ -300,7 +372,7 @@
         <x>0</x>
         <y>200</y>
         <width>511</width>
-        <height>521</height>
+        <height>591</height>
        </rect>
       </property>
       <column>
@@ -310,7 +382,7 @@
       </column>
       <column>
        <property name="text">
-        <string>Customer</string>
+        <string>Customer ID</string>
        </property>
       </column>
      </widget>
@@ -343,6 +415,14 @@
         <width>111</width>
         <height>26</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 0px;
+border-radius: 10px;
+</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_9">
@@ -377,7 +457,7 @@
        <rect>
         <x>0</x>
         <y>110</y>
-        <width>511</width>
+        <width>161</width>
         <height>20</height>
        </rect>
       </property>
@@ -408,6 +488,14 @@
         <height>26</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
      </widget>
      <widget class="QPushButton" name="AddDesiredProductButton">
       <property name="geometry">
@@ -423,18 +511,44 @@
         <pointsize>13</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
       <property name="text">
        <string>Add Product</string>
       </property>
      </widget>
-     <zorder>label_10</zorder>
-     <zorder>label_7</zorder>
-     <zorder>DesiredProductTableView</zorder>
-     <zorder>label_8</zorder>
-     <zorder>label_9</zorder>
-     <zorder>AddDesiredProductInputBox</zorder>
-     <zorder>AddDesiredProductCustomerIDComboBox</zorder>
-     <zorder>AddDesiredProductButton</zorder>
+     <widget class="QPushButton" name="DeleteDesiredProductButton">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>800</y>
+        <width>171</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string>Delete Product</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
@@ -446,7 +560,7 @@
         <x>0</x>
         <y>50</y>
         <width>511</width>
-        <height>681</height>
+        <height>771</height>
        </rect>
       </property>
       <column>
@@ -505,6 +619,14 @@
         <pointsize>13</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
       <property name="text">
        <string>Clear Desired Products Table</string>
       </property>
@@ -523,11 +645,19 @@
         <pointsize>13</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
       <property name="text">
        <string>Clear Customer Table</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="FindBogoItemsButton">
+     <widget class="QPushButton" name="FindPublixBogoItemsButton">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -541,11 +671,45 @@
         <pointsize>13</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
       <property name="text">
-       <string>Find BOGO Items</string>
+       <string>Find Publix BOGO Items</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="FindCustomerItems">
+     <widget class="QPushButton" name="FindCustomerItemsButton">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>290</y>
+        <width>201</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>13</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
+      <property name="text">
+       <string>Find Customer Items</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="FindChewDealsButton">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -559,8 +723,16 @@
         <pointsize>13</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
+border-style: solid;
+border-color: dimgrey;
+border-width: 2px;
+border-radius: 10px;
+</string>
+      </property>
       <property name="text">
-       <string>Find Customer Items</string>
+       <string>Find Chewy Deals</string>
       </property>
      </widget>
     </widget>

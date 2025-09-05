@@ -24,10 +24,10 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(45,45,45)</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -172,8 +172,7 @@
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
 border-width: 2px;
 border-radius: 10px;
@@ -190,8 +189,7 @@ border-radius: 10px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
 border-width: 2px;
 border-radius: 10px;
@@ -208,8 +206,7 @@ border-radius: 10px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
 border-width: 2px;
 border-radius: 10px;
@@ -226,10 +223,9 @@ border-radius: 10px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
-border-width: 0px;
+border-width: 2px;
 border-radius: 10px;
 </string>
       </property>
@@ -249,8 +245,7 @@ border-radius: 10px;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
 border-width: 2px;
 border-radius: 10px;
@@ -417,10 +412,9 @@ border-radius: 10px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
-border-width: 0px;
+border-width: 2px;
 border-radius: 10px;
 </string>
       </property>
@@ -489,8 +483,7 @@ border-radius: 10px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
 border-width: 2px;
 border-radius: 10px;
@@ -512,8 +505,7 @@ border-radius: 10px;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
 border-width: 2px;
 border-radius: 10px;
@@ -620,8 +612,7 @@ border-radius: 10px;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
 border-width: 2px;
 border-radius: 10px;
@@ -646,8 +637,7 @@ border-radius: 10px;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
 border-width: 2px;
 border-radius: 10px;
@@ -672,8 +662,7 @@ border-radius: 10px;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
 border-width: 2px;
 border-radius: 10px;
@@ -698,8 +687,7 @@ border-radius: 10px;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
 border-width: 2px;
 border-radius: 10px;
@@ -724,8 +712,7 @@ border-radius: 10px;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 dimgrey, stop: 1 dimgrey);
-border-style: solid;
+       <string notr="true">border-style: solid;
 border-color: dimgrey;
 border-width: 2px;
 border-radius: 10px;

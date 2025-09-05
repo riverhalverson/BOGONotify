@@ -15,15 +15,11 @@ from PySide6.QtUiTools import QUiLoader
 
 def main():
     data = Database()
-    '''
+
     app = qtw.QApplication(sys.argv)
     window = MainWindow()
     window.show()
-    '''
-    loader = QUiLoader()
-    app = QtWidgets.QApplication(sys.argv)
-    window = loader.load("UI/MainWindow.ui", None)
-    window.show()
+
 
     sys.exit(app.exec())
 

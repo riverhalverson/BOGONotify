@@ -73,7 +73,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         results = page.getChewyItems()
 
-
     @qtc.Slot()
     def onFindCustomerItemsClicked(self):
         print("Finding customer items")

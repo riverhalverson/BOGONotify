@@ -138,8 +138,9 @@ class Page:
             title = text.split('\n', 1)[0]
 
             # Add title to list
-            itemList.append(title)
-            print("Item found: " + title)
+            if(title != ""):
+                itemList.append(title)
+                print("Item found: " + title)
 
 
         return itemList

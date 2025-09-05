@@ -29,8 +29,12 @@ class Customer:
                     message = "The following items from your list were found on BOGO! " + "\n" + matchesFound
                     print(message)
 
+                    customerInfo = dataBase.getCustomerInfo(0)
+                    customerPhoneNum = customerInfo[3]
+                    customerCarrier = customerInfo[2]
+
                     sms = SMS()
-                    #sms.sendNotification(,"Verizon", message)
+                    sms.sendNotification(customerPhoneNum,customerCarrier, message)
 
                     customerInfo = dataBase.getCustomerInfo(1)
                     print("Customer Info:", customerInfo)
